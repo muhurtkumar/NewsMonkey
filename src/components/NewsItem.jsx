@@ -11,7 +11,7 @@ export default class NewsItem extends Component {
             <div className="card-body" style={{height: "280px", overflow: "hidden"}}>
                 <h5 className="card-title" style={{height: "50px", textOverflow: "ellipsis", display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: 2, overflow: "hidden"}}>{title}</h5>
                 <p className="card-text" style={{height: "70px", textOverflow: "ellipsis", display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: 3,  overflow: "hidden"}}>{!description?"Find out more...":description}</p>
-                <p className="card-text" style={{height: "50px"}}><small className="text-body-secondary">By {!author? "Unknown":author} on {new Date(date).toGMTString()}</small></p>
+                <p className="card-text" style={{height: "50px"}}><small className="text-danger">By {!author? "Unknown":author} on {new Date(date).toGMTString()}</small></p>
                 <a rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-primary" style={{position: "absolute", bottom: "10px"}}>Read More</a>
             </div>
         </div>
