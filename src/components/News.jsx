@@ -24,7 +24,6 @@ export default class News extends Component {
 
     constructor(props){
         super(props);
-        console.log("Hello I am a constructor from News component");
         this.state = {
             articles: [],
             loading: false,
@@ -65,7 +64,7 @@ export default class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h1 className="text-center" style={{margin: '30px 0px'}}>NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
+        <h1 className={`text-center text-${this.props.mode==='light'?'dark':'light'}`} style={{margin: '30px 0px', marginTop: '90px'}}>NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
         {this.state.loading && <Loading/>}
         <InfiniteScroll
             dataLength={this.state.articles.length}
@@ -77,7 +76,7 @@ export default class News extends Component {
                 <div className="row">
                     {this.state.articles.filter(article => !article.content || !article.content.includes("[Removed]")).map((element)=>{
                         return <div className="col-md-4" key={element.url}>
-                            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} date={element.publishedAt} author={element.author} source={element.source.name} />
+                            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} date={element.publishedAt} author={element.author} source={element.source.name} mode={this.props.mode} />
                         </div>
                     })}
                 </div>
