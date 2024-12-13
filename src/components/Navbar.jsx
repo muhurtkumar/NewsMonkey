@@ -29,7 +29,7 @@ export default class navbar extends Component {
             </div>
             <div className={`form-check form-switch text-${this.props.mode==='light'?'dark':'light'}`}>
                 <input className="form-check-input" onClick={this.props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-                <label className="form-check-label" for="flexSwitchCheckDefault">{this.props.mode === 'light' ? 'Dark' : 'Light'} Mode</label>
+                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{this.props.mode === 'light' ? 'Dark' : 'Light'} Mode</label>
             </div>
           </div>
         </nav>
